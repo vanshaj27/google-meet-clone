@@ -23,7 +23,7 @@ var AppProcess = (function () {
     local_div = document.getElementById("locaVideoPlayer");
   }
   function eventProcess() {
-    $("#miceMuteUnmute").on("click", async function () {
+    $("#micMuteUnmute").on("click", async function () {
       if (!audio) {
         await loadAudio();
       }
@@ -34,14 +34,14 @@ var AppProcess = (function () {
       if (isAudioMute) {
         audio.enabled = true;
         $(this).html(
-          "<span class='material-icons' style='width:100%;'>mic</span>"
+          "<span class='material-icons'>mic</span>"
         );
         updateMediaSenders(audio, rtp_aud_senders);
         console.log(rtp_aud_senders);
       } else {
         audio.enabled = false;
         $(this).html(
-          "<span class='material-icons' style='width:100%;'>mic_off</span>"
+          "<span class='material-icons'>mic_off</span>"
         );
         removeMediaSenders(rtp_aud_senders);
         audio.stop();
