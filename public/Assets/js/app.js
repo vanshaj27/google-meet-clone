@@ -57,7 +57,7 @@ var AppProcess = (function () {
       }
     });
 
-    $("#ScreenShareOnOf").on("click", async function () {
+    $("#ScreenShareOnOff").on("click", async function () {
       if (video_st == video_states.ScreenShare) {
         await videoProcess(video_states.None);
       } else {
@@ -123,7 +123,7 @@ var AppProcess = (function () {
       $("#videoCamOnOff").html(
         "<span class='material-icons' style='width:100%;'>videocam_off</span>"
       );
-      $("#ScreenShareOnOf").html(
+      $("#ScreenShareOnOff").html(
         '<span class="material-icons">present_to_all</span><div>Present Now</div>'
       );
       video_st = newVideoState;
@@ -165,7 +165,7 @@ var AppProcess = (function () {
         });
         vstream.oninactive = (e) => {
           removeVideoStream(rtp_vid_senders);
-          $("#ScreenShareOnOf").html(
+          $("#ScreenShareOnOff").html(
             '<span class="material-icons ">present_to_all</span><div >Present Now</div>'
           );
         };
@@ -186,14 +186,14 @@ var AppProcess = (function () {
       $("#videoCamOnOff").html(
         '<span class="material-icons" style="width: 100%;">videocam</span>'
       );
-      $("#ScreenShareOnOf").html(
+      $("#ScreenShareOnOff").html(
         '<span class="material-icons ">present_to_all</span><div >Present Now</div>'
       );
     } else if (newVideoState == video_states.ScreenShare) {
       $("#videoCamOnOff").html(
         '<span class="material-icons" style="width: 100%;">videocam_off</span>'
       );
-      $("#ScreenShareOnOf").html(
+      $("#ScreenShareOnOff").html(
         '<span class="material-icons text-success">present_to_all</span><div class="text-success">Stop Present Now</div>'
       );
     }
